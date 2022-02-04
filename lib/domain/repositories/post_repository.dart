@@ -3,12 +3,12 @@ import 'package:djamo_todo_app/domain/entities/post.dart';
 
 abstract class PostRepository {
 
-  Future<Response<List<Post>>> getAllPosts();
+  Future<ApiResponse<List<Post>>> getAllPosts();
 
-  Future<Response<Post>> createPost(Post post);
+  Future<ApiResponse<Post>> createPost(Post post);
 
-  Future<Response<Post>> deletePost(int postId);
+  Future<ApiResponse<Post>> deletePost(int postId);
 
-  Future<Response<Post>> updatePost(Post post);
+  Future<ApiResponse<Post>> updatePost(Post post);
 
 }

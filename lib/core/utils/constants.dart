@@ -1,3 +1,3 @@
-const String kBaseUrl = "https://jsonplaceholder.typicode.com";
+const String kBaseUrl = "https://jsonplaceholder.typicode.com/posts";
 
 const int kUserID = 1;
