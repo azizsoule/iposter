@@ -31,7 +31,7 @@ class PostRepositoryImpl implements PostRepository {
   @override
   Future<ApiResponse<Post>> deletePost(int postId) async {
     try {
-      final Response response = await _postApiService.delete(postId);
+      final Response response = await _postApiService.deletePost(postId);
       if (response.statusCode == HttpStatus.ok) {
         return SuccessResponse<PostModel>(response.body);
       } else {
@@ -47,7 +47,7 @@ class PostRepositoryImpl implements PostRepository {
     try {
       final Response response = await _postApiService.getAllPosts();
       if (response.statusCode == HttpStatus.created) {
-        return SuccessResponse<PostModel>(response.body as List<PostModel>);
+        return SuccessResponse<List<PostModel>>(response.body as List<PostModel>);
       } else {
         return const ErrorResponse(UnknownErrorException());
       }
