@@ -47,7 +47,7 @@ class PostRepositoryImpl implements PostRepository {
     try {
       final Response response = await _postApiService.getAllPosts();
       if (response.statusCode == HttpStatus.created) {
-        return SuccessResponse<PostModel>(response.body);
+        return SuccessResponse<PostModel>(response.body as List<PostModel>);
       } else {
         return const ErrorResponse(UnknownErrorException());
       }
