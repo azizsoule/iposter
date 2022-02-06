@@ -1,4 +1,4 @@
-import 'package:djamo_todo_app/domain/entities/post.dart';
+import 'package:djamo_todo_app/src/domain/entities/post.dart';
 
 class PostModel extends Post {
   PostModel({

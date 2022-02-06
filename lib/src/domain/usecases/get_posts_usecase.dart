@@ -1,7 +1,7 @@
-import 'package:djamo_todo_app/core/resources/response.dart';
-import 'package:djamo_todo_app/core/usecases/usecase.dart';
-import 'package:djamo_todo_app/domain/entities/post.dart';
-import 'package:djamo_todo_app/domain/repositories/post_repository.dart';
+import 'package:djamo_todo_app/src/core/resources/response.dart';
+import 'package:djamo_todo_app/src/core/usecases/usecase.dart';
+import 'package:djamo_todo_app/src/domain/entities/post.dart';
+import 'package:djamo_todo_app/src/domain/repositories/post_repository.dart';
 
 class GetPostsUseCase implements UseCase<ApiResponse<List<Post>>, void> {
 

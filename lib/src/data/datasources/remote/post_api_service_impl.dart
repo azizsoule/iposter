@@ -1,8 +1,16 @@
-import 'package:djamo_todo_app/data/datasources/remote/post_api_service.dart';
-import 'package:djamo_todo_app/data/models/post_model.dart';
+import 'package:djamo_todo_app/src/core/utils/constants.dart';
+import 'package:djamo_todo_app/src/data/datasources/remote/post_api_service.dart';
+import 'package:djamo_todo_app/src/data/models/post_model.dart';
+import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
 
-class PostApiServiceImpl extends PostApiService {
+class PostApiServiceImpl extends GetConnect implements PostApiService {
+
+  @override
+  void onInit() {
+    httpClient.baseUrl = kBaseUrl;
+    super.onInit();
+  }
   
   @override
   Future<Response<PostModel>> createPost(PostModel postModel) async {
@@ -16,7 +24,7 @@ class PostApiServiceImpl extends PostApiService {
 
   @override
   Future<Response<List<PostModel>>> getAllPosts() async {
-    return await get("", decoder: (json) => List<PostModel>.from((json as List<Map<String, dynamic>>).map((e) => PostModel.fromJson(e))));
+    return await get("", decoder: (json) => List<PostModel>.from(json.map((e) => PostModel.fromJson(e))));
   }
 
   @override
